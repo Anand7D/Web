@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="about-us-css.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">We Curate Comfort!</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="blogmain.html">Blogs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="aboutUs" class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <h2>About Us</h2>
+            <div id="aboutContent">
+                <!-- Content will be dynamically populated here -->
+            </div>
+            <a href="index.html" class="btn btn-primary d-block mx-auto">Back to Home</a>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- Custom Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const aboutData = {
+            title: "About Us",
+            image: "aerial-view-business-team.jpg",
+            content: [
+                "Introducing our exceptional team of artisans dedicated to crafting the most comfortable couches you'll ever experience.",
+                "Our team is comprised of skilled craftsmen and designers who are passionate about blending style with unparalleled comfort,",
+                "creating pieces that transform living spaces into havens of relaxation.",
+                "Collaboration is at the heart of our process, with designers working closely with our craftsmen to bring creative visions to life.",
+                " From the initial concept sketches to the final touches, our team works tirelessly to ensure that every aspect of our couches meets and exceeds your expectations."
+            ]
+        };
+
+        const aboutContent = document.getElementById('aboutContent');
+
+        const aboutContentHTML = `
+            <img src="${aboutData.image}" alt="${aboutData.title} Image" class="mb-3">
+            ${aboutData.content.map(paragraph => `<p>${paragraph}</p>`).join('')}
+        `;
+        aboutContent.innerHTML = aboutContentHTML;
+    });
+</script>
+</body>
+</html>
